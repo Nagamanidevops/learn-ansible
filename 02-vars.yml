@@ -17,6 +17,7 @@
     - name: access variable
       ansible.buil.debug:
       msg: URL=={{URL}}
+  ##FGVFNBFM    
         
 - name: Declare variable at task level
   hosts: all
