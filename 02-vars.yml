@@ -52,6 +52,5 @@
     - name: run a shell command
       ansible.debug.shell: uptime
       
-  c
-        
+ 
       
