@@ -47,16 +47,12 @@
         msg: ansible host.name == {{ansible_fqdn}}  
         
         
-- name: Register a variable
-  hosts: all
-  connection: local
-  tasks:
-    - name: run a schell command
+- name: run a schell command
       ansible.builtin.shell: uptime
-      rigester: out
-    - name: print out
+      register: out
+    - name: Print out
       ansible.builtin.debug:
-      msg: "{{out}}"
+        msg: "{{out.stdout}}"
       
       
  
