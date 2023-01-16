@@ -53,6 +53,11 @@
   tasks:
     - name: run a schell command
       ansible.builtin.shell: uptime
+      rigester: out
+    - name: print out
+      ansible.builtin.debug:
+      msg: "{{out}}"
+      
       
  
       
