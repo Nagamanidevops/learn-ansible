@@ -3,3 +3,9 @@
   connection: local
   roles:
     - demo
+
+- name: print url
+  ansible.builtin.debug:
+   msg: URL=={{URL}}
+
+    
