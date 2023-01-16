@@ -7,24 +7,24 @@
     - name: Access a variable
       ansible.builtin.debug:
         msg: URL == {{URL}}
-        
-- name: declare variable in file
+
+- name: Declare variable in anothe file
   hosts: all
   connection: local
-  var_files:
-            - var.yml
+  vars_files:
+    - var.yml
   tasks:
-    - name: access variable
-      ansible.buil.debug:
-      msg: URL=={{URL}}
-   
-        
-- name: Declare variable at task level
+    - name: Access variable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+## vars_files can also be declared on task level.
+
+- name: Declare variable at Tasks level
   hosts: all
   connection: local
   tasks:
-    - name: Access a variable at task level
+    - name: Declare and access a variable
       ansible.builtin.debug:
         msg: URL == {{URL}}
       vars:
-       URL: TASK.EXAMLP.COM
+        URL: task.example.com
