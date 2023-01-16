@@ -36,5 +36,13 @@
   tasks:
     - name: Access variable
       ansible.builtin.debug:
-        msg: URL == {{URL}}    
+        msg: URL == {{URL}}  
+        
+- name: access facts
+  hosts: all
+  connection: local
+  tasks:
+    - name: Access facts
+      ansible.builtin.debug:
+        msg: ansible host.name == {{ansible_fqdn}}  
       
